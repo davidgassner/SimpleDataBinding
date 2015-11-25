@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="user"
+            type="com.example.david.myapplication.User" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.example.david.myapplication.DetailActivity">
+
+        <TextView
+            android:id="@+id/fNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/first_name" />
+
+        <TextView
+            android:id="@+id/fNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/fNameLabel"
+            android:layout_toEndOf="@+id/fNameLabel"
+            android:layout_toRightOf="@+id/fNameLabel"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@{user.firstName}"/>
+
+        <TextView
+            android:id="@+id/lNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/fNameLabel"
+            android:text="@string/last_name" />
+
+        <TextView
+            android:id="@+id/lNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/lNameLabel"
+            android:layout_alignLeft="@+id/fNameText"
+            android:layout_alignStart="@+id/fNameText"
+            android:text="@{user.lastName}" />
+    </RelativeLayout>
+</layout>
